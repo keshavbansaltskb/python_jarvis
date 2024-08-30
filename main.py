@@ -114,6 +114,8 @@ if __name__ == "__main__":
                 print("Listening for 'Jarvis'...")
                 audio = r.listen(source,timeout=2, phrase_time_limit=1)
             word = r.recognize_google(audio)
+            if(word.lower() == "quit"):
+                break
             if(word.lower() == "jarvis"):
                 speak("Yes Sir, How may i help you")
                 # Listen for command
